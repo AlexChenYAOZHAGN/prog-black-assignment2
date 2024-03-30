@@ -116,3 +116,11 @@
     background-color: white;
     cursor: pointer;
 }
+
+.home-link {
+    margin-left: -200px; /* 调整主页链接与 Logo 之间的间距 */
+    margin-top: 55px;
+    font-size: 25px; 
+    text-decoration: none; 
+    color: #f8f8f8; 
+}

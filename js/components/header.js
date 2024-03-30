@@ -11,6 +11,7 @@ export function renderHeader() {
                     <img class="logo-icon" src="images/icons/logo.png" alt="Logo">
                 </a>
             </div>
+            <span class="home-link">Home</span>  <!-- add Home text -->
             <div class="header-right">
                 <div class="search">
                     <input class="search-input" placeholder="Search" aria-label="Search">
