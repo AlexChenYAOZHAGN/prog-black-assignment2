@@ -14,7 +14,9 @@ export function renderHeader() {
             <span class="home-link">Home</span>  <!-- add Home text -->
             <div class="header-right">
                 <div class="search">
-                    <input class="search-input" placeholder="Search" aria-label="Search">
+                    <input class="search-input" placeholder="Search Name" aria-label="Search">
+                    <input class="min-price-input" placeholder="$Min" type="number" aria-label="Minimum Price">
+                    <input class="max-price-input" placeholder="$Max" type="number" aria-label="Maximum Price">
                     <button class="search-button" aria-label="Search Button">
                         <img class="search-icon" src="images/icons/search.svg" alt="Search">
                     </button>
@@ -39,8 +41,12 @@ function addSearchEventListener() {
 
     searchButton.addEventListener("click", () => {
         const searchText = document.querySelector(".search-input").value.trim();
-        if (searchText) {
-            location.href = `/search.html?input=${encodeURIComponent(searchText)}`;
+         // the range of price
+         const minPrice = document.querySelector(".min-price-input").value || 0;
+         const maxPrice = document.querySelector(".max-price-input").value || Number.MAX_SAFE_INTEGER;
+ 
+         if (searchText || minPrice || maxPrice) {
+             location.href = `/search.html?input=${encodeURIComponent(searchText)}&minPrice=${encodeURIComponent(minPrice)}&maxPrice=${encodeURIComponent(maxPrice)}`;
         }
     });
 }
