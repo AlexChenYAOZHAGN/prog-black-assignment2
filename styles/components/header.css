@@ -124,3 +124,15 @@
     text-decoration: none; 
     color: #f8f8f8; 
 }
+.min-price-input{
+    width: 50px; /* 设置输入框的宽度 */
+    height: 40px; 
+    font-size: 18px; /* 设置输入框的字体大小 */
+    margin-right: 0px; /* 设置输入框之间的右边距 */
+}
+.max-price-input {
+    width: 50px; 
+    height: 40px; 
+    font-size: 18px; 
+    margin-right: 10px; 
+}
