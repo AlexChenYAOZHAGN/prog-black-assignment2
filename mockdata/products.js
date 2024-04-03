@@ -216,10 +216,13 @@ export function getProduct(productId) {
     return products.find(product => product.id === productId);
 }
 
-export function searchProduct(searchText) {
+export function searchProduct(searchText, minPrice = 0, maxPrice = Number.MAX_SAFE_INTEGER) {
     const lowerCaseSearchText = searchText.toLowerCase();
+     // Filter based on both the inclusion of text and the price range of the item
     return products.filter(product =>
-        product.name.toLowerCase().includes(lowerCaseSearchText) ||
-        product.description.toLowerCase().includes(lowerCaseSearchText)
+        (product.name.toLowerCase().includes(lowerCaseSearchText) ||
+        product.description.toLowerCase().includes(lowerCaseSearchText)) &&
+        product.discountPrice >= minPrice &&
+        product.discountPrice <= maxPrice
     );
 }
