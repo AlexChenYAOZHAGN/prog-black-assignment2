@@ -13,6 +13,17 @@ export function renderCheckoutPrice() {
     }, { productNum: 0, productPrice: 0, deliveryPrice: 0 });
 
     const totalPrice = totals.productPrice + totals.deliveryPrice;
+
+    //add a function every 300 has 40 off
+    //Calculate the amount of money that has been deducted and the amount of money that is still needed until the next deduction.
+    const discount = Math.floor(totalPrice / 300) * 40;
+    const nextDiscountThreshold = 300 - (totalPrice % 300);
+    const discountedTotalPrice = totalPrice - discount;
+
+    const discountInfoHtml = `
+        <p class="discount-info">You have saved $${discount} so far!</p>
+        ${totalPrice % 300 === 0 ? '' : `<p class="next-discount-info">Add $${nextDiscountThreshold} more to save another $40.</p>`}
+        `;
     var cart_ = "[";
     for (let i = 0; i < cart.length-1; i++) {
         cart_ += JSON.stringify(cart[i])+",";
@@ -39,8 +50,10 @@ export function renderCheckoutPrice() {
         <hr class="checkout-summary-hr">
         <p class="total-price">
             <span>lump sum : </span>
-            <span>$${totalPrice}</span>
+            <span>$${discountedTotalPrice}</span>
         </p>
+        <p style="color: red;"> $40 off for every $300 </p>
+        ${discountInfoHtml}
         <button class="checkout-button" onclick="submitForm()">Checkout</button>
         <form style="display: none;" id="checkout" action="http://localhost:3000/checkout" method="post">
         
