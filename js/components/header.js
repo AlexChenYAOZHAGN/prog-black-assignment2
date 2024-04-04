@@ -27,10 +27,16 @@ export function renderHeader() {
                     </a>
                     <p class="cart-num">${getCartNum()}</p>
                 </div>
+                <!-- 心愿清单 -->
+                <div class="wishlist">
+                    <a href="wishlist.html">
+                        <img class="wishlist-icon" src="images/icons/wishlist.png" alt="WishList">
+                    </a>
+                    <p class="wishlist-num">${3}</p>
+                </div>    
             </div>
         </div>
     `;
-
     headerContainer.innerHTML = html;
     addSearchEventListener();
 }
