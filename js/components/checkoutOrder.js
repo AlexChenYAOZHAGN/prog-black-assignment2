@@ -6,19 +6,22 @@ import { renderHeader } from "./header.js";
 
 export function renderCheckoutOrder() {
     const generateDeliveryOptions = (productId, deliveryId) =>
-        deliveryOptions.map((option) => `
-            <div class="delivery-option">
-                <input 
-                    ${option.id === deliveryId ? "checked" : ""}
-                    type="radio" 
-                    class="delivery-option-input" 
-                    name="delivery-option-${productId}"
-                    data-product-id="${productId}"
-                    data-delivery-id="${option.id}">
-                <p class="delivery-option-name">${option.name}</p>
-                <p class="delivery-option-price">$${option.price}</p>
-            </div>
-        `).join('');
+    deliveryOptions.map((option) => `
+        <div class="delivery-option">
+            <input 
+                ${option.id === deliveryId ? "checked" : ""}
+                type="radio" 
+                class="delivery-option-input" 
+                name="delivery-option-${productId}"
+                data-product-id="${productId}"
+                data-delivery-id="${option.id}">
+            <p class="delivery-option-name">${option.name}</p>
+            <p class="delivery-option-price">$${option.price}</p>
+            ${option.id === "3" ? `<input type="text" class="delivery-address-input" 
+            data-product-id="${productId}" placeholder=" Durham University" style="display: 
+            ${deliveryId === "3" ? 'block' : 'none'};">` : ''}
+        </div>
+    `).join('');
 
     const productRowsHtml = cart.map((item) => {
         console.log(item.id)
@@ -89,4 +92,22 @@ function setupEventListeners() {
             renderHeader();
         });
     });
+
+    document.querySelectorAll(".delivery-option-input").forEach(input => {
+    input.addEventListener("click", function() {
+        const { productId, deliveryId } = this.dataset;
+        updateCart(productId, deliveryId, false);
+        renderCheckoutPrice();
+        // Show or hide the address input box when the delivery option is selected
+        const addressInput = document.querySelector(`.delivery-address-input[data-product-id="${productId}"]`);
+        if (deliveryId === "3") { // if Home delivery
+            addressInput.style.display = "block";
+        } else {
+            if (addressInput) {
+                addressInput.style.display = "none";
+            }
+        }
+    });
+});
 }
+

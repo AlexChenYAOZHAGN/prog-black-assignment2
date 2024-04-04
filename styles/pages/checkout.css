@@ -141,6 +141,7 @@
 }
 
 .delivery-option-price{
+    margin-right:20px;
     font-size:16px;
     font-weight: 900;
     color: red;
@@ -205,4 +206,15 @@
 
 .checkout-button:active{
     background-color: #fc9376;
+}
+
+.delivery-option-input,
+.delivery-option-name{
+    margin-right:20px;
+}
+
+.delivery-option-name{
+    font-size:16px;
+    font-weight: 500;
+    color: gray;
 }
