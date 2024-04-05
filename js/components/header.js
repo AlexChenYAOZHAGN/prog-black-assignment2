@@ -1,4 +1,5 @@
 import { getCartNum } from "./cart.js";
+import { getWishlistNum } from "./wishlist.js";
 
 export function renderHeader() {
     const headerContainer = document.querySelector(".header");
@@ -32,7 +33,7 @@ export function renderHeader() {
                     <a href="wishlist.html">
                         <img class="wishlist-icon" src="images/icons/wishlist.png" alt="WishList">
                     </a>
-                    <p class="wishlist-num">${3}</p>
+                    <p class="wishlist-num">${getCartNum()}</p>
                 </div>    
             </div>
         </div>
