@@ -157,3 +157,10 @@
     padding: 10px;
 }
 
+.add-to-wishlist{
+    height: 29px;
+    background-color:white;
+    padding:6px;
+    border-radius: 7px;
+    cursor: pointer;
+}

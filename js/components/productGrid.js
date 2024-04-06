@@ -1,5 +1,6 @@
 import { addToCart } from "./cart.js";
 import { renderHeader } from "./header.js";
+import { addToWishList } from "./wishlist.js";
 import {products} from "../../mockdata/products.js";
 
 const PRODUCTS_PER_PAGE = 10;
@@ -16,6 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderHeader();
                 showAddSuccess(productId);
             }
+    // Add to Wishlist with Listening
+            else if (e.target.classList.contains("add-to-wishlist")) {
+                e.preventDefault();
+                const productId = e.target.dataset.productId;
+                addToWishList(productId);
+                renderHeader();
+                showAddWishlistSuccess(productId);
+            }
+    
         });
     }
 });
@@ -25,35 +35,46 @@ export function renderProductGrid(products) {
     const paginationElement = document.querySelector(".pagination");
     if (!productGridElement || !paginationElement) return;
 
-    // 计算当前页应显示的产品
+    // Calculate the products that should be displayed on the current page
     const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
     const endIndex = startIndex + PRODUCTS_PER_PAGE;
     const productsToShow = products.slice(startIndex, endIndex);
 
     const productBlocksHtml = productsToShow.map(product => `
-        <div class="product-block">
-            <a href="product.html#${product.id}">
-                <div class="product-image-row">
-                    <img class="product-image" src="${product.img}" alt="${product.name}">
-                    <p class="product-discount">${product.discount ? `${product.discount}% off` : ""}</p>
-                </div>
-                <div class="product-information">
-                    <div class="product-text">
-                        <p class="product-name">${product.name}</p>
-                        <div class="add-success hidden-element js-add-success-${product.id}">
-                            <img class="check-icon" src="images/icons/check.png" alt="Added">
-                            <p class="add-success-p">Added to the cart</p>
+    <div class="product-block">
+        <a href="product.html#${product.id}">
+            <div class="product-image-row">
+                <img class="product-image" src="${product.img}" alt="${product.name}">
+                <p class="product-discount">${product.discount ? `${product.discount}% off` : ""}</p>
+            </div>
+            <div class="product-information">
+                <div class="product-text">
+                    <p class="product-name">${product.name}</p>
+                    <div class="add-success hidden-element js-add-success-${product.id}">
+                        <img class="check-icon" src="images/icons/check.png" alt="Added">
+                        <p class="add-success-p">Added to the cart</p>
+                    </div>
+                    <!-- 添加到心愿列表 -->
+                    <div class="add-success hidden-element js-add-wishlist-success-${product.id}">
+                    <img class="check-icon" src="images/icons/check.png" alt="Added">
+                    <p class="add-success-p">Added to whishlist</p>
+                    </div>
+                    <div class="product-price-row">
+                        <div class="product-price">
+                            <p class="discount-price">$${product.discountPrice}</p>
+                            <p class="origin-price">${product.originPrice ? `￡${product.originPrice}` : ""}</p>
                         </div>
-                        <div class="product-price-row">
-                            <div class="product-price">
-                                <p class="discount-price">$${product.discountPrice}</p>
-                                <p class="origin-price">${product.originPrice ? `￡${product.originPrice}` : ""}</p>
-                            </div>
-                            <img 
-                                data-product-id="${product.id}" 
-                                class="add-to-cart" 
-                                src="images/icons/cart.png" 
-                                alt="Add to Cart">
+                        <img 
+                            data-product-id="${product.id}" 
+                            class="add-to-cart" 
+                            src="images/icons/cart.png" 
+                            alt="Add to Cart">
+                        <!-- 每个商品 添加到心愿列表的实现 -->
+                        <img 
+                            data-product-id="${product.id}" 
+                            class="add-to-wishlist" 
+                            src="images/icons/wishlist.png" 
+                            alt="Add to Wishlist">
                         </div>
                     </div>
                 </div>
@@ -79,6 +100,16 @@ export function renderProductGrid(products) {
 
 function showAddSuccess(productId) {
     const successElement = document.querySelector(`.js-add-success-${productId}`);
+    if (successElement) {
+        successElement.classList.remove("hidden-element");
+        setTimeout(() => {
+            successElement.classList.add("hidden-element");
+        }, 1000);
+    }
+}
+
+function showAddWishlistSuccess(productId) {
+    const successElement = document.querySelector(`.js-add-wishlist-success-${productId}`);
     if (successElement) {
         successElement.classList.remove("hidden-element");
         setTimeout(() => {
