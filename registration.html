@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durham University Merchandise Store</title>
+    <link rel="stylesheet" href="styles/pages/registration.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/173383e162.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="js/pages/validation.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form action="phps/process-signup.php" method="post" id="signup" novalidate>
+                <div class="input-group">
+
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" name="name" placeholder="Name">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Email">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Password confirmation">
+                    </div>
+
+                    <p>Lost password <a href="#">Click Here!</a></p>
+
+                </div>
+
+                <div class="btn-field">
+                    <button type="submit" id="signupBtn">Sign up</button>
+                    <button type="button" id="signinBtn" class="disable">Sign in</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        let signupBtn = document.getElementById("signupBtn");
+        let signinBtn = document.getElementById("signinBtn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById("title");
+
+        signinBtn.onclick = function() {
+            window.location.href = 'phps/login.php'; // Redirect to the login.php page
+        };
+        
+
+    </script>
+</body>
+</html>
