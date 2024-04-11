@@ -102,6 +102,51 @@
     cursor: pointer;
 }
 
+.delete-from-wishlist{
+    margin-top:20px;
+    margin-left: 20px; /* 右移动 */
+    width:100px;
+    font-size: 16px;
+    padding: 8px 0px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.add-success-p{
+    color:rgb(6, 125, 98);
+}
+
+.check-icon{
+    height: 20px;
+    margin-right:10px;
+}
+
+.add-success{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hidden-element {
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.add-to-cart-from-wishlist{
+    margin-top:20px;
+    width:100px;
+    font-size: 16px;
+    padding: 8px 0px;
+    background-color: rgb(72, 0, 255);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
 .delete-from-cart:hover{
     background-color: red;
 }
@@ -141,7 +186,6 @@
 }
 
 .delivery-option-price{
-    margin-right:20px;
     font-size:16px;
     font-weight: 900;
     color: red;
@@ -208,13 +252,63 @@
     background-color: #fc9376;
 }
 
-.delivery-option-input,
-.delivery-option-name{
-    margin-right:20px;
+
+
+/* 心愿板的格式设置 */
+.wishlist-board {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
 }
 
-.delivery-option-name{
-    font-size:16px;
-    font-weight: 500;
-    color: gray;
+.wishlist-board h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.wishlist-input {
+    width: 100%;
+    height: 50px; /* 根据需要调整输入框的高度 */
+    margin-bottom: 10px;
+}
+
+.save-wishlist-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wishlist-messages-list {
+    font-size: 20px;
+    margin-left: 50px;
+    color: #66000f; 
+}
+
+.wishlist-board h2 {
+    font-size: 20px; 
+    font-family: 'Arial', sans-serif;
+}
+
+.wishlist-input {
+    font-size: 20px; 
+    font-family: 'Georgia', serif; 
+}
+
+.save-wishlist-btn {
+    font-size: 20px; 
+    font-family: 'Verdana', sans-serif; 
+}
+
+
+.discount-info, .next-discount-info {
+    font-size: 20px; /* 设置字体大小 */
+}
+
+
+.delivery-address-input{
+    margin-left: 20px;
 }
