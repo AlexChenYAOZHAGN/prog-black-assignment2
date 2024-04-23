@@ -85,4 +85,47 @@ After downloading Visual Studio Code from its official website, install it on yo
 
 Once the server is running, your website should be accessible locally. If you encounter any issues, make sure that the PHP and MySQL modules in XAMPP are running, and your project settings in Visual Studio Code are correctly configured.
 
+# Website Functionality Overview
+
+## Main Page (`index.php`)
+
+- **Product Display**: Items from Durham University for sale are displayed with images. Each item is shown in a box that includes:
+  - **Cart Button**: Adds the item to your shopping cart.
+  - **Wishlist Button**: Adds the item to your wishlist.
+  - **Price Listing**: Displayed on the left side of the cart button.
+- **Search Bar**: Located at the header for finding items. After entering your search terms, you can specify a minimum and maximum price range. A magnifying glass icon submits the search query.
+- **Pagination**: Navigate through multiple pages of items with next and previous buttons located at the bottom of the page.
+
+### Detailed Product View
+
+- **Access**: Clicking on an item box redirects to a detailed view of the item, including:
+  - **Images** and **name** of the item.
+  - **Reviews**: Number of reviews and star rating.
+  - **Pricing**: Original price (greyed out), discount amount (in red), and discounted price.
+  - **Quantity Selector**: Allows selection of the quantity to purchase.
+  - **Add to Cart**: Button to add the item directly to the shopping cart.
+  - **Product Description**: Detailed information about the item is listed below.
+
+## Shopping Cart
+
+- **Access**: By pressing the cart button at the top right of the header, you can view:
+  - **Items List**: Each item you plan to purchase, with options to delete or change the quantity.
+  - **Pricing Details**: Displayed alongside each item.
+  - **Delivery Options**: Choose from "Pick up the goods yourself", "Pick up from merchant", or "Home delivery".
+
+## Wishlist
+
+- **Access**: The wishlist button next to the cart button shows:
+  - **Listed Items**: Each desired item with options to remove from the wishlist or add to the cart.
+  - **Manage Wishlist**: Add notes or adjust the list as needed.
+
+## Navigation
+
+- **Home Button**: Clicking the Durham University logo labeled "Home" at any time will redirect you to the home page.
+
+## Authentication
+
+- **Sign Up**: Located under the Durham University logo. Redirects to the sign-up page where new users can register by entering their name, email, password, and password confirmation.
+- **Sign In**: Also under the Durham University logo, redirects to the sign-in page where existing users can log in by entering their email address and password.
+
 
