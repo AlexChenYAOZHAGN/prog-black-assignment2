@@ -38,3 +38,51 @@ Here's the translation of the described functionalities into English:
     - Delete buttons (`.delete-from-cart`): When clicked, it removes the corresponding product from the cart and updates the page and header information.
     - Delivery option input fields (`.delivery-option-input`): When clicked, it updates the delivery option for the product in the cart and recalculates the price.
     - Purchase quantity input fields (`.buy-num`): When modified, it updates the purchase quantity for the product in the cart and recalculates the price.
+
+# Project Setup Instructions
+
+This guide will walk you through setting up your PHP environment and running the project using XAMPP and Visual Studio Code.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **XAMPP**: Download from the [official XAMPP website](https://www.apachefriends.org/index.html).
+- **Visual Studio Code**: Download from the [official Visual Studio Code website](https://code.visualstudio.com/).
+
+## Installation and Setup
+
+### Step 1: Install XAMPP
+
+Download and install XAMPP from the official website. This will be used to manage your PHP and MySQL services.
+
+### Step 2: Start XAMPP Services
+
+- Open the XAMPP control panel.
+- Start the Apache and MySQL modules. These services are necessary to run PHP applications and manage databases.
+
+### Step 3: Install Visual Studio Code
+
+After downloading Visual Studio Code from its official website, install it on your computer. This will be your integrated development environment (IDE) for coding.
+
+### Step 4: Configure PHP in Visual Studio Code
+
+- Follow the instructions in this YouTube video to configure PHP in Visual Studio Code: [Setup PHP in VS Code](https://www.youtube.com/watch?v=Ry8tRRfxxf4&ab_channel=BoostMyTool).
+- This will guide you on how to add the PHP executable path to Visual Studio Code and set up a conducive development environment.
+
+### Step 5: Open Your Project
+
+- Open Visual Studio Code.
+- Navigate to the folder where you have your project, named `prog-black-assignment2`.
+- Open the project folder in Visual Studio Code.
+
+### Step 6: Serve Your Project
+
+- Right-click within the Visual Studio Code window.
+- Select the option "PHP Server: Serve Project".
+- This action starts a local PHP server and opens your project in your default web browser.
+
+## Running the Project
+
+Once the server is running, your website should be accessible locally. If you encounter any issues, make sure that the PHP and MySQL modules in XAMPP are running, and your project settings in Visual Studio Code are correctly configured.
+
+
