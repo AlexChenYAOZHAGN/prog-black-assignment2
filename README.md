@@ -43,6 +43,12 @@ Here's the translation of the described functionalities into English:
 
 This guide will walk you through setting up your PHP environment and running the project using XAMPP and Visual Studio Code.
 
+To make this fully functional:
+1. You need to place the whole project folder into XAMPP/xamppfiles/htdocs
+2. If the path after htdocs is prog-black-assignment2/index.php, then after starting the server in the browser you need to type localhost/prog-black-assignment2/index.php to see the main page and it applies to other pages as well
+3. To make the webpage fully functional in addition you need to go to Backend Client in prog-black-assignment2 folder and start index.js by type node index.js in terminal, this runs the backend client so after placing any orders backend can see the orders. In edition there are two links "http://127.0.0.1:3000/orders/82818421" and "http://127.0.0.1:3000/delivered/291842" the first one is for backend clients to confirm orders to make it ready to be shipped and the second one is to delete orders after confirming it is shipped.
+
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
