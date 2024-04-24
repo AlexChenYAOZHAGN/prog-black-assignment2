@@ -1,13 +1,10 @@
-// import necessary functions from other modules
 import { getCartNum } from "./cart.js";
 import { getWishlistNum } from "./wishlist.js";
 
-// This function renders the header and adds event listeners to the search button
 export function renderHeader() {
     const headerContainer = document.querySelector(".header");
     if (!headerContainer) return;
 
-    // Create the HTML for the header
     const html = `
         <div class="header-container">
             <div class="header-left">
